@@ -1,0 +1,23 @@
+<po-page-default class="po-text-center" p-title="Pokedex Cards">
+  <div *ngFor="let pokemon of pokemons">
+    <po-widget
+      class="po-xl-3 po-lg-4 po-md-6 po-sm-12 po-mb-2"
+      p-title="{{ pokemon.num }}"
+      p-primary-label="Detalhes"
+      (p-primary-action)="onClick()"
+    >
+      <div class="po-font-subtitle po-text-center po-mb-1">
+        {{ pokemon.name }}
+      </div>
+      <div class="po-text-center">
+        <img src="{{ pokemon.img }}" alt="imagem do pokemon {{ pokemon.name }}" />
+      </div>
+      <div
+        class="po-text-center po-mb-1 po-xl-6 po-lg-6 po-md-6 po-sm-6 {{pokemon.type[i]}}"
+        *ngFor="let i = index; of: pokemon.type"
+      >
+        {{ pokemon.type[i] }}
+      </div>
+    </po-widget>
+  </div>
+</po-page-default>
