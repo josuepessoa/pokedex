@@ -12,7 +12,7 @@ import { PoDynamicViewField } from '@po-ui/ng-components';
 export class DetailsComponent implements OnInit {
   @Input()
   pokemon: any = [];
-  pokemons: any = [];
+
   constructor(
     private httpClient: HttpClient,
     private service: PokedexService,

@@ -14,7 +14,7 @@ export class PokedexService {
   }
 
   listar() {
-    return this.httpClient.get<any[]>(this.url);
+    return this.httpClient.get<Pokemon[]>(this.url);
   }
 
   getPokemon(id:string){

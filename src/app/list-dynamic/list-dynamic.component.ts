@@ -1,7 +1,7 @@
 import { Component, OnInit ,Input, ViewChild} from '@angular/core';
 import { PokedexService } from '../pokedex.service';
 import { PoPageDynamicTableCustomTableAction } from '@po-ui/ng-templates';
-
+import { Pokemon } from '../models/pokemon.model';
 
 @Component({
   selector: 'app-list-dynamic',
@@ -11,7 +11,7 @@ import { PoPageDynamicTableCustomTableAction } from '@po-ui/ng-templates';
 export class ListDynamicComponent implements OnInit {
 
   @Input()
-  pokemons: any = [];
+  pokemons: Pokemon[] = [];
   detailedUser: any = [];;
 
   constructor(

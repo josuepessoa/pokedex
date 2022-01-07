@@ -1,6 +1,7 @@
 
 import { Component, OnInit ,Input, ViewChild} from '@angular/core';
 import { PokedexService } from '../pokedex.service';
+import { Pokemon } from '../models/pokemon.model';
 
 @Component({
   selector: 'app-home',
@@ -11,19 +12,14 @@ import { PokedexService } from '../pokedex.service';
 export class HomeComponent implements OnInit {
 
   @Input()
-  pokemons: any = [];
+  pokemons: Pokemon[] = [];
 
   constructor(private service: PokedexService ) { }
 
   ngOnInit(): void {
     this.service.listar().subscribe((pokemons: any) => {
-      let poke = (pokemons.pokemon);
       this.pokemons=pokemons.pokemon
     });
-  }
-
-  onClick(){
-    alert("clicou")
   }
 
 }

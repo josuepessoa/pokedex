@@ -1,6 +1,7 @@
 import { Component, OnInit ,Input, ViewChild} from '@angular/core';
 import { PokedexService } from '../pokedex.service';
 import { PoTableAction  } from '@po-ui/ng-components';
+import { Pokemon } from '../models/pokemon.model';
 
 @Component({
   selector: 'app-list',
@@ -10,7 +11,7 @@ import { PoTableAction  } from '@po-ui/ng-components';
 export class ListComponent implements OnInit {
 
   @Input()
-  pokemons: any = [];
+  pokemons: Pokemon[] = [];
   detailedUser: any = [];;
 
   constructor(
@@ -19,9 +20,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.listar().subscribe((pokemons: any) => {
-      let poke = (pokemons.pokemon);
       this.pokemons=pokemons.pokemon
-
     });
   }
 

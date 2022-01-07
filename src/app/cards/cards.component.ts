@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { PokedexService } from '../pokedex.service';
 import { Router } from '@angular/router';
+import { Pokemon } from '../models/pokemon.model';
 
 @Component({
   selector: 'app-cards',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CardsComponent implements OnInit {
   @Input()
-  pokemons: any = [];
+  pokemons: Pokemon[] = [];
 
   constructor(private service: PokedexService , private router: Router) {}
 
