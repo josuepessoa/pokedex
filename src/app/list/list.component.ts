@@ -1,6 +1,6 @@
 import { Component, OnInit ,Input, ViewChild} from '@angular/core';
 import { PokedexService } from '../pokedex.service';
-import { PoPageDynamicTableCustomTableAction  } from '@po-ui/ng-templates';
+import { PoTableAction  } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-list',
@@ -29,11 +29,15 @@ export class ListComponent implements OnInit {
     alert("clicou em detalhar" + ret.id)
   }
 
-  tableCustomActions: Array<PoPageDynamicTableCustomTableAction> = [
+  readonly actions: Array<PoTableAction> = [
     {
-      label: 'Details',
+      label: 'Detalhar',
       action: this.onClick.bind(this),
-
+      icon: 'po-icon-eye'
+    },
+    {
+      label: 'Cancelar',
+      icon: 'po-icon-close'
     }
   ];
 

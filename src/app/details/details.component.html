@@ -1,1 +1,20 @@
-<p>details works!</p>
+<po-page-default class="" p-title="{{ pokemon.name }}">
+  <po-container>
+  <div class="po-text-center">
+    <img src="{{ pokemon.img }}" alt="" />
+  </div>
+  <div class="po-row">
+    <div
+      class="po-text-center po-mb-5 po-offset-xl-2 po-offset-lg-2 po-xl-3 po-lg-3 po-md-6 po-sm-6 {{
+        pokemon.type[i]
+      }}"
+      *ngFor="let i = index; of: pokemon.type"
+    >
+      {{ pokemon.type[i] }}
+    </div>
+  </div>
+</po-container>
+  <po-dynamic-view class="po-row po-mt-5" [p-value]="pokemon" [p-fields]="fields">
+  </po-dynamic-view>
+
+</po-page-default>

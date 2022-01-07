@@ -11,7 +11,7 @@ import { ListComponent } from './list/list.component';
 import { HomeComponent } from './home/home.component';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { ListDynamicComponent } from './list-dynamic/list-dynamic.component';
-import { MenuComponent } from './menu/menu.component';
+import { PoTableModule } from '@po-ui/ng-components';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,15 +19,15 @@ import { MenuComponent } from './menu/menu.component';
     DetailsComponent,
     CardsComponent,
     ListComponent,
-    ListDynamicComponent,
-    MenuComponent
+    ListDynamicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PoModule,
     RouterModule.forRoot([]),
-    PoTemplatesModule
+    PoTemplatesModule,
+    PoTableModule
   ],
   providers: [PokedexService],
   bootstrap: [AppComponent]

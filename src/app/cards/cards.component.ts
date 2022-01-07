@@ -1,27 +1,28 @@
-import { Component, OnInit ,Input, ViewChild} from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { PokedexService } from '../pokedex.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.scss']
+  styleUrls: ['./cards.component.scss'],
 })
 export class CardsComponent implements OnInit {
-
   @Input()
   pokemons: any = [];
 
-  constructor(private service: PokedexService ) { }
+  constructor(private service: PokedexService , private router: Router) {}
 
   ngOnInit(): void {
     this.service.listar().subscribe((pokemons: any) => {
-      let poke = (pokemons.pokemon);
-      this.pokemons=pokemons.pokemon
+      this.pokemons = pokemons.pokemon;
     });
   }
 
-  onClick(){
-    alert("clicou")
+  onClick(id:string) {
+    this.router.navigateByUrl(`/details/${id}`);
   }
 
 }
+
+

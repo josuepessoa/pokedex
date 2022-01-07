@@ -5,6 +5,10 @@
   >
 </po-navbar>
 <div class="po-wrapper">
-  <app-menu></app-menu>
+  <po-menu
+  [p-menus]="menus"
+  [p-filter]="true"
+>
+</po-menu>
   <router-outlet></router-outlet>
 </div>

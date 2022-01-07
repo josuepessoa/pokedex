@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PoNavbarIconAction } from '@po-ui/ng-components';
+import { PoMenuItem } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-root',
@@ -28,5 +29,42 @@ export class AppComponent {
       label: 'GitHub',
     },
   ];
+
+  readonly menus: Array<PoMenuItem> = [
+    {
+      label: 'Home',
+      action: this.onClick.bind(this),
+      link: '/home',
+      icon: 'po-icon-home',
+      shortLabel: 'Home',
+    },
+    {
+      label: 'Cards',
+      action: this.onClick.bind(this),
+      link: '/card',
+      icon: 'po-icon-grid',
+      shortLabel: 'Cards',
+    },
+    {
+      label: 'Listas',
+      action: this.onClick.bind(this),
+      link: '/list',
+      icon: 'po-icon-list',
+      shortLabel: 'Listas',
+      subItems: [
+        { label: 'Table', action: this.onClick.bind(this), link: '/list' },
+        {
+          label: 'Dynamic Table',
+          action: this.onClick.bind(this),
+          link: '/list-dynamic',
+        },
+      ],
+    },
+  ];
+
+  private onClick() {
+    console.log(this);
+    //this.router.navigate(['/home']);
+  }
 
 }

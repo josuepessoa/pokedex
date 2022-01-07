@@ -4,7 +4,7 @@
       class="po-xl-3 po-lg-4 po-md-6 po-sm-12 po-mb-2"
       p-title="{{ pokemon.num }}"
       p-primary-label="Detalhes"
-      (p-primary-action)="onClick()"
+      (p-primary-action)="onClick(pokemon.num)"
     >
       <div class="po-font-subtitle po-text-center po-mb-1">
         {{ pokemon.name }}

@@ -7,15 +7,18 @@ import { Pokemon } from './models/pokemon.model';
 })
 export class PokedexService {
 
-  private listaPokemons: Pokemon[];
-  private url = 'http://pokemonsgo.herokuapp.com'
+  private url = 'http://pokemonsgo.herokuapp.com/'
 
   constructor(private httpClient: HttpClient) {
-    this.listaPokemons = []; //inicializa o array de pokemons
+
   }
 
   listar() {
     return this.httpClient.get<any[]>(this.url);
+  }
+
+  getPokemon(id:string){
+    return this.httpClient.get(`${this.url}/?id=${id}`)
   }
 
 }
