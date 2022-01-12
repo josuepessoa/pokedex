@@ -7,10 +7,10 @@ import { PoModule } from '@po-ui/ng-components';
 import { RouterModule } from '@angular/router';
 import { DetailsComponent } from './details/details.component';
 import { CardsComponent } from './cards/cards.component';
-import { ListComponent } from './list/list.component';
+import { ListComponent } from './lists/list/list.component';
 import { HomeComponent } from './home/home.component';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
-import { ListDynamicComponent } from './list-dynamic/list-dynamic.component';
+import { ListDynamicComponent } from './lists/list-dynamic/list-dynamic.component';
 import { PoTableModule } from '@po-ui/ng-components';
 @NgModule({
   declarations: [

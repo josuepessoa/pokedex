@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PokedexService } from '../pokedex.service';
 import { Router } from '@angular/router';
 import { Pokemon } from '../models/pokemon.model';

@@ -1,7 +1,8 @@
 import { Component, OnInit ,Input, ViewChild} from '@angular/core';
-import { PokedexService } from '../pokedex.service';
+import { PokedexService } from '../../pokedex.service';
 import { PoTableAction  } from '@po-ui/ng-components';
-import { Pokemon } from '../models/pokemon.model';
+import { Pokemon } from '../../models/pokemon.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -15,7 +16,7 @@ export class ListComponent implements OnInit {
   detailedUser: any = [];;
 
   constructor(
-    private service: PokedexService,
+    public service: PokedexService,private router: Router
      ) { }
 
   ngOnInit(): void {
@@ -24,8 +25,8 @@ export class ListComponent implements OnInit {
     });
   }
 
-  onClick(ret:any){
-    alert("clicou em detalhar" + ret.id)
+  onClick(ret : any) {
+    this.router.navigateByUrl(`/details/${ret.id}`);
   }
 
   readonly actions: Array<PoTableAction> = [

@@ -38,20 +38,22 @@ export class AppComponent {
     },
     {
       label: 'Cards',
-      link: '/card',
+      link: '/cards',
       icon: 'po-icon-grid',
       shortLabel: 'Cards',
     },
     {
       label: 'Listas',
-      link: '/list',
       icon: 'po-icon-list',
       shortLabel: 'Listas',
       subItems: [
-        { label: 'Table', link: '/list' },
+        {
+          label: 'Table',
+          link: '/lists/list'
+        },
         {
           label: 'Dynamic Table',
-          link: '/list-dynamic',
+          link: '/lists/list-dynamic',
         },
       ],
     },

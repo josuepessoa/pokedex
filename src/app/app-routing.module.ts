@@ -1,8 +1,3 @@
-import { ListDynamicComponent } from './list-dynamic/list-dynamic.component';
-import { ListComponent } from './list/list.component';
-import { CardsComponent } from './cards/cards.component';
-import { DetailsComponent } from './details/details.component';
-import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,32 +6,28 @@ import { PoModalModule } from '@po-ui/ng-components';
 import { PoToolbarModule } from '@po-ui/ng-components';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-  },
+
   {
     path: 'home',
-    component: HomeComponent,
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'details/:id',
-    component: DetailsComponent,
+    path: 'cards',
+    loadChildren: () =>
+      import('./cards/cards.module').then((m) => m.CardsModule),
   },
   {
-    path: 'card',
-    component: CardsComponent,
+    path: 'lists',
+    loadChildren: () =>
+      import('./lists/lists.module').then((m) => m.ListsModule),
   },
   {
-    path: 'list',
-    component: ListComponent,
+    path: 'details',
+    loadChildren: () =>
+      import('./details/details.module').then((m) => m.DetailsModule),
   },
-  {
-    path: 'list-dynamic',
-    component: ListDynamicComponent,
-  },
+  { path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes),BrowserAnimationsModule,PoModule,PoModalModule,PoToolbarModule ],
   exports: [RouterModule]

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PokedexService } from '../pokedex.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { PoDynamicViewField } from '@po-ui/ng-components';
@@ -15,7 +14,6 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private httpClient: HttpClient,
-    private service: PokedexService,
     private route: ActivatedRoute,
   ) {}
 
