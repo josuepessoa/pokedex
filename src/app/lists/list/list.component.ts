@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
   detailedUser: any = [];;
 
   constructor(
-    public service: PokedexService,private router: Router
+    public service: PokedexService, private router: Router
      ) { }
 
   ngOnInit(): void {

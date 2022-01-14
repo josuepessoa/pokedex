@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pokedex-ebc1b": {
+      "hosting": {
+        "pokedex": [
+          "pokedex-ebc1b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pokedex-ebc1b"
+  }
+}
