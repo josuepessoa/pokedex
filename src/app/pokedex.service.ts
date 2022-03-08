@@ -7,7 +7,7 @@ import { Pokemon } from './models/pokemon.model';
 })
 export class PokedexService {
 
-  private url = 'http://pokemonsgo.herokuapp.com'
+  private url = 'https://pokemonsgo.herokuapp.com'
 
   constructor(private httpClient: HttpClient) {
 
