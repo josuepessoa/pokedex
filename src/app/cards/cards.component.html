@@ -13,7 +13,7 @@
         <img src="{{ pokemon.img }}" alt="imagem do pokemon {{ pokemon.name }}" />
       </div>
       <div
-        class="po-text-center po-mb-1 po-xl-6 po-lg-6 po-md-6 po-sm-6 {{pokemon.type[i]}}"
+        class="po-text-center po-mb-1 po-xl-{{ 12/pokemon.type.length }} po-lg-{{ 12/pokemon.type.length }} po-md-{{ 12/pokemon.type.length }} po-sm-{{ 12/pokemon.type.length }} {{pokemon.type[i]}}"
         *ngFor="let i = index; of: pokemon.type"
       >
         {{ pokemon.type[i] }}
