@@ -17,7 +17,7 @@ export class DetailsComponent implements OnInit {
     private route: ActivatedRoute,
   ) {}
 
-  private url = 'http://pokemonsgo.herokuapp.com';
+  private url = 'https://pokemonsgo.herokuapp.com';
 
   ngOnInit(): void {
     this.pokemon = this.route.params.subscribe((params) =>
